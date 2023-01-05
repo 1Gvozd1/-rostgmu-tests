@@ -28,7 +28,6 @@ window.onload = function(){
     }
     document.querySelector('button').addEventListener('click', function viewResult(){
         document.getElementById('blockQuestion').innerHTML = '';
-        //document.querySelector('button').removeEventListener('click', viewResult);
         let file = document.getElementById('file').files[0];
         let reader = new FileReader();
         reader.readAsText(file);
@@ -72,7 +71,6 @@ window.onload = function(){
                 }
                 i++;
             }
-            console.log(arrQuestions)
             let random_start = 0; // От какого генерировать
             let random_end = arrQuestions.length-1; // До какого генерировать
             let arrayresult = [];
@@ -92,7 +90,6 @@ window.onload = function(){
             let t = 0;
             let f = true;
             let result = 0;
-            console.log(arrayresult);
             let allquestions = document.createElement('div');
             allquestions.innerText = `Общее число вопросов в файле ${arrQuestions.length}`
             document.getElementById('blockQuestion').appendChild(allquestions);
