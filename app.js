@@ -139,8 +139,9 @@ window.onload = function(){
                     answer.innerText = arrQuestions[arrayresult[i]].strings[j].slice(2);
                     answer.style.cursor = 'pointer';
                     answer.style.paddingLeft = '10px';
-                    answer.style.marginBottom = '10px';
-                    answer.style.marginTop = '10px';
+                    answer.style.marginBottom = '15px';
+                    answer.style.marginTop = '15px';
+                    answer.style.borderLeft = 'solid';
                     answer.addEventListener('click', function choose(){
                         if(answer.innerText.localeCompare(arrQuestions[arrayresult[i]].answer.slice(3)) === 0) {
                             answer.style.color = "#99FF66"

@@ -24,13 +24,13 @@ body {
 .list {
     cursor: pointer;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     margin-bottom: 20px;
     justify-content: center;
 }
 .tests {
     border: solid;
-    flex: 0 0 33.333333%;
+    padding: 10px;
     margin-right: 10px;
     margin-bottom: 10px;
 }
