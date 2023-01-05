@@ -27,7 +27,8 @@ window.onload = function(){
         return array;
     }
     document.querySelector('button').addEventListener('click', function viewResult(){
-        document.querySelector('button').removeEventListener('click', viewResult);
+        document.getElementById('blockQuestion').innerHTML = '';
+        //document.querySelector('button').removeEventListener('click', viewResult);
         let file = document.getElementById('file').files[0];
         let reader = new FileReader();
         reader.readAsText(file);
@@ -40,7 +41,7 @@ window.onload = function(){
             let counterallquest = 0;
             let answer = 0;
             let i = 0;
-            while(reader.result[i]!=='$') {
+            while(i !== reader.result.length) {
                 quest += reader.result[i];
                 if (reader.result[i] === '@' || (reader.result[i] === '+' && reader.result[i+1] === '+' && reader.result[i+2] === '+')){
                     allquest[counterallquest] = quest.replace(/.$/,"");
@@ -91,6 +92,7 @@ window.onload = function(){
             let t = 0;
             let f = true;
             let result = 0;
+            console.log(arrayresult);
             let allquestions = document.createElement('div');
             allquestions.innerText = `Общее число вопросов в файле ${arrQuestions.length}`
             document.getElementById('blockQuestion').appendChild(allquestions);
