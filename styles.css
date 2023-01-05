@@ -1,0 +1,20 @@
+body {
+    font-family: Roboto;
+    background-color: rgba(0, 0, 0, 0.83);
+    color: white;
+    font-size: 20px;
+}
+.button-play{
+    background-color: rgb(119, 0, 199);
+    border: none;
+    color: white;
+    border: solid white;
+    padding: 16px 32px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+}
