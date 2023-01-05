@@ -129,7 +129,11 @@ window.onload = function(){
                 if(arrQuestions[arrayresult[i]].marker !== true) {
                     shuffle(arrQuestions[arrayresult[i]].strings);
                 }
-                question.innerText = i+1 + ".  " + arrQuestions[arrayresult[i]].strings[0].slice(4);
+                if(arrQuestions[arrayresult[i]].strings[0][0] == '1'){
+                    question.innerText = i+1 + ".  " + arrQuestions[arrayresult[i]].strings[0].slice(4);
+                } else {
+                    question.innerText = i+1 + ".  " + arrQuestions[arrayresult[i]].strings[0];
+                }
                 question.style.paddingBottom = "5px";
                 question.style.paddingTop = "5px";
                 question.style.borderTop = "solid";
@@ -152,7 +156,7 @@ window.onload = function(){
                             answer.style.color = "#FF0000"
                             arrWrongQuestions[t] = arrQuestions[arrayresult[i]];
                             t++;
-                            rightanswer.innerText = "Правильный ответ: " + arrQuestions[arrayresult[i]].answer.slice(3);
+                            rightanswer.innerText = "Правильный ответ: " + arrQuestions[arrayresult[i]].answer.slice(2);
                             f = !f;
                             answer.removeEventListener('click', choose);
                         }
