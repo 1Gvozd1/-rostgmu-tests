@@ -18,3 +18,22 @@ body {
     text-decoration: none;
     cursor: pointer;
 }
+.hide {
+    display: none;
+}
+.list {
+    cursor: pointer;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+.tests {
+    border: solid;
+    flex: 0 0 33.333333%;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+.testslist {
+    margin-bottom: 20px;
+}

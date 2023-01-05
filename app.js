@@ -1,4 +1,30 @@
 window.onload = function(){
+    let chooser = 1;
+    let name = ''
+    let i = 1;
+    let elementsarray = [];
+    while (i!==14) {
+        elementsarray.push(document.getElementById(`${i}`));
+      i++;
+    }
+    elementsarray.forEach(function(elem, index) {
+        elem.addEventListener("click", function() {
+            chooser = (index + 1);
+            name = elem.innerText;
+            document.getElementById('nameTest').innerText = `Выбранный тест : ${name}`
+            elem.style.color = "#99FF66";
+            setTimeout(function() {
+                elem.style.color = "white";
+            }, (500));
+
+        });
+    });
+
+    class FileRead {
+        constructor(result) {
+            this.result = result;
+        }
+    }
     class Question {
         constructor(strings, answer, marker) {
             this.strings = strings;
@@ -28,10 +54,8 @@ window.onload = function(){
     }
     document.querySelector('button').addEventListener('click', function viewResult(){
         document.getElementById('blockQuestion').innerHTML = '';
-        let file = document.getElementById('file').files[0];
-        let reader = new FileReader();
-        reader.readAsText(file);
-        reader.onload = function () {
+        let file = document.getElementById(`${chooser}Test`).innerHTML;
+        let reader = new FileRead(file);
             let marker = false;
             let counterQuestionsandAns = 0;
             let arrQuestions = [];
@@ -45,6 +69,9 @@ window.onload = function(){
                 if (reader.result[i] === '@' || (reader.result[i] === '+' && reader.result[i+1] === '+' && reader.result[i+2] === '+')){
                     allquest[counterallquest] = quest.replace(/.$/,"");
                     allquest[counterallquest] = allquest[counterallquest].replace(/(\r\n|\n|\r)/gm, "");
+                    allquest[counterallquest] = allquest[counterallquest].replace(/\s+/g,' ');
+                    allquest[counterallquest] = allquest[counterallquest].trimEnd();
+
                     counterallquest++;
                     quest = '';
                 }
@@ -112,7 +139,6 @@ window.onload = function(){
                     answer.innerText = arrQuestions[arrayresult[i]].strings[j].slice(2);
                     answer.style.cursor = 'pointer';
                     answer.style.paddingLeft = '10px';
-                    answer.style.borderLeft = 'solid';
                     answer.style.marginBottom = '10px';
                     answer.style.marginTop = '10px';
                     answer.addEventListener('click', function choose(){
@@ -163,9 +189,5 @@ window.onload = function(){
                 }
             })
 
-
-
-
-        }
     })
 };
