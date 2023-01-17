@@ -1,4 +1,10 @@
 window.onload = function(){
+    let donation = document.getElementById('donation');
+    let color = 0;
+    setInterval(function () {
+        color = color + 1 % 360;
+        donation.style.color = "hsl(" + color + ", 100%, 50%)"; // hsl(0, 100%, 50%)
+    }, 5);
     let chooser = 1;
     let name = ''
     let i = 1;
@@ -113,6 +119,7 @@ window.onload = function(){
             for(let countCycles = 0; countCycles<=allCycles; countCycles++){
                 arrayresult.push(arraynumbers.splice(Math.random()*arraynumbers.length,1)[0]);
             }
+            console.log(arrayresult);
             let arrWrongQuestions = [];
             let t = 0;
             let f = true;

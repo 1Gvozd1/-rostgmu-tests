@@ -37,3 +37,10 @@ body {
 .testslist {
     margin-bottom: 20px;
 }
+
+.donation {
+    font-size: 25px;
+    color: white;
+    display: flex;
+    justify-content: right;
+}
