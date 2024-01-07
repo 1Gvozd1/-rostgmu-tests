@@ -1,46 +1,57 @@
 body {
-    font-family: Roboto;
-    background-color: rgba(0, 0, 0, 0.83);
-    color: white;
-    font-size: 20px;
+  font-family: Roboto;
+  background-color: rgba(0, 0, 0, 0.83);
+  color: white;
+  font-size: 20px;
 }
-.button-play{
-    background-color: rgb(119, 0, 199);
-    border: none;
-    color: white;
-    border: solid white;
-    padding: 16px 32px;
-    text-align: center;
-    font-size: 16px;
-    margin: 4px 2px;
-    transition: 0.3s;
-    display: inline-block;
-    text-decoration: none;
-    cursor: pointer;
+.button-play {
+  background-color: rgb(119, 0, 199);
+  border: none;
+  color: white;
+  border: solid white;
+  padding: 16px 32px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition: 0.3s;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
 }
 .hide {
-    display: none;
+  display: none;
 }
 .list {
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 20px;
-    justify-content: center;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  justify-content: center;
 }
 .tests {
-    border: solid;
-    padding: 10px;
-    margin-right: 10px;
-    margin-bottom: 10px;
+  border: solid;
+  padding: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
 }
 .testslist {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .donation {
-    font-size: 25px;
-    color: white;
-    display: flex;
-    justify-content: right;
+  font-size: 25px;
+  color: white;
+  display: flex;
+  margin-bottom: 20px;
+  flex-direction: column;
+  text-align: left;
+}
+
+.donationRow {
+  align-items: center;
+  gap: 10px;
+  display: flex;
+  justify-content: left;
+  text-align: left;
+  flex-direction: row;
 }
